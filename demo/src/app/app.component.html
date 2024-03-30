@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular App</title>
+</head>
+<body>
+  <!-- <p>{{title}} </p>
+  <p><strong>Child to Parent Component Interaction</strong></p>
+  <span>{{message}}</span>-->
+  <app-product (childEvent)="message=$event"[name]="name"></app-product> 
+  <div><strong>Template Driven Form</strong>
+    <app-template-form></app-template-form>
+  </div>
+  <div><strong>Reactive Forms</strong>
+    <app-reactive-forms></app-reactive-forms>
+  </div>
+  <div><strong>Angular Life Cycle Hooks Methods</strong>
+    <app-lifecycle-hooks></app-lifecycle-hooks>
+  </div>
+</body>
+</html>
