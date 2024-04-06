@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-form',
@@ -10,4 +10,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class TemplateFormComponent {
   favColor: string ='Blue';
+
+  onSubmit(form: NgForm) {
+    console.log('Your form data : ', form.value);
+}
+
 }

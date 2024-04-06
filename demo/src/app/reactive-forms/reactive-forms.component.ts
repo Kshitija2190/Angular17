@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormGroup, FormBuilder   } from '@angular/forms';
 
 @Component({
-  selector: 'app-reactive-forms',
+  selector: 'app-reactive-forms', 
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './reactive-forms.component.html',
@@ -10,5 +10,23 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class ReactiveFormsComponent {
   favColor = new FormControl("");
+  public contactForm: any;
+
+  constructor(private formBuilder:FormBuilder,){
+    this.createContactForm();
+
+  }
+  createContactForm(){
+    this.contactForm = new FormGroup({
+      fullName: new FormControl(''),
+      email: new FormControl(''),
+      message: new FormControl(''),
+    });
+  }
+
+  onSubmit() {
+    console.log('Your form data : ', this.contactForm.value );
+}
+
 
 }
