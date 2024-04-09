@@ -1,0 +1,15 @@
+a {
+    text-decoration: underline;
+    cursor:pointer;
+    color:white;
+}
+ul li {
+    list-style-type: none;
+    background-color: gray;
+    width:40px;
+    padding:10px;
+}
+p {
+    text-align:center;
+    font-weight: bolder;
+}

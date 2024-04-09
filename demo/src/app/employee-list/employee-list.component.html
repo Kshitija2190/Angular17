@@ -2,7 +2,7 @@
     <p>Employee List</p>
     <ul *ngFor="let x of employees">
 
-        <li>{{x.name}}</li>
+        <li (click)="onSelect(x)"><a>{{x.name}}</a></li>
     </ul>
     {{errorMsg}}
 </div>

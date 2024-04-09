@@ -1,6 +1,7 @@
 <div>
     <p>Employee Details</p>
-    <ul *ngFor="let x of employees">
+    You selected employee having id : {{selectedIndex}}
+    <ul *ngFor="let x of selectedEmp">
         <li>{{x.id}}  {{x.name}} {{x.age}}  </li>
        
     </ul>

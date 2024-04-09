@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
@@ -11,7 +11,7 @@ import { EmployeeServiceService } from './services/employee-service.service';
 @Component({
   selector: 'app',
   standalone: true,
-  imports: [RouterOutlet,ProductComponent,TemplateFormComponent,ReactiveFormsComponent,LifecycleHooksComponent,EmployeeListComponent,EmployeeDetailsComponent],
+  imports: [RouterOutlet,ProductComponent,TemplateFormComponent,ReactiveFormsComponent,LifecycleHooksComponent,EmployeeListComponent,EmployeeDetailsComponent, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   //providers: [EmployeeServiceService]

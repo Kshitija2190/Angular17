@@ -8,7 +8,7 @@ import {Observable, catchError, throwError} from 'rxjs';
 })
 export class EmployeeServiceService {
 
-  private _url :string = 'assets/employee.json';
+  private _url :string = 'assets/data/employee.json';
 
   constructor(private http:HttpClient) {
    

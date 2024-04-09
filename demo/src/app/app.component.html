@@ -9,7 +9,7 @@
   <!-- <p>{{title}} </p>
   <p><strong>Child to Parent Component Interaction</strong></p>
   <span>{{message}}</span>-->
-  <app-product (childEvent)="message=$event"[name]="name"></app-product> 
+  <!-- <app-product (childEvent)="message=$event"[name]="name"></app-product> 
   <div><strong>Template Driven Form</strong>
     <app-template-form></app-template-form>
   </div>
@@ -21,6 +21,17 @@
   </div>
  
   <app-employee-list></app-employee-list>
-  <app-employee-details></app-employee-details>
+  <app-employee-details></app-employee-details> -->
+  <h1>Angular Router App</h1>
+<nav>
+  <ul>
+    <li><a routerLink="/product" routerLinkActive="active" ariaCurrentWhenActive="page">Product</a></li>
+    <li><a routerLink="/templateform" routerLinkActive="active" ariaCurrentWhenActive="page">Template Form</a></li>
+    <li><a routerLink="/reactiveform" routerLinkActive="active" >Reactive Form</a></li>
+    <li><a routerLink="/emplist" routerLinkActive="active" >Employee List</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>
 </body>
 </html>
