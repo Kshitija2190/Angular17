@@ -23,28 +23,16 @@ export class EmployeeDetailsComponent {
   ngOnInit() {
   // this.employees = this.empService.getEmployees();
   this.getEmpDetails();
-  this.selectionDetails();
+  
+  setTimeout(() => {
+    
+    // Call the setDelay function again with the remaining times
+    this.selectionDetails();
+}, 1000);
   }
   getEmpDetails(){
-   // this.empService.getEmpDetails().subscribe(data => this.employees = data,error=>this.errorMsg =error)
-    this.employees =[{
-      id: 1, "name": "John", age: 35
-    },
-    {
-      id: 2, "name": "James", age: 31
-    },
-    {
-      id: 3, "name": "Jeena", age: 32
-    },
-    {
-      id: 4, "name": "Jim", age: 34
-    }
-      , {
-      id: 5, "name": "Jack", age: 33
-    },
-    {
-      id: 6, "name": "John", age: 35
-    }];
+   this.empService.getEmpDetails().subscribe(data => this.employees = data,error=>this.errorMsg =error)
+    
   }
    selectionDetails(){
     let id = (this.route.snapshot.paramMap.get('id'));
@@ -54,6 +42,5 @@ export class EmployeeDetailsComponent {
       if(x.id == id )
         return x;
     });
-    console.log(this.selectedEmp );
    }
 }
