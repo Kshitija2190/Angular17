@@ -1,0 +1,15 @@
+.form-size {
+    padding: 20px;
+    font-size :large;
+    font-weight: 900;
+    text-align: center;
+}
+input,textarea {
+    width: 70%;
+    margin-bottom:20px;
+}
+.primary {
+    background-color:navy;
+    color: white;
+
+}

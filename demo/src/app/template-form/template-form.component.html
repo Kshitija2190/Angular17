@@ -2,15 +2,22 @@
     <input type="text" [(ngModel)]="favColor"/>
     {{favColor}}
 </div>-->
-<form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" >
-    <input type = "text" name = "fullName" placeholder = "Your full name" ngModel>
-    <br/>
-  
-    <input type = "email" name = "email" placeholder = "Your email" ngModel>
-    <br/>
-  
-    <textarea name = "message" placeholder = "Your message" ngModel></textarea>
-    <br/>
-    <input type = "submit" value = "Send">
-  </form>
-  
+<div>
+    <div class="row">
+        <div class="col-md-12 form-size">
+            <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+                <input type="text" name="fullName" placeholder="Your full name" ngModel>
+                <br />
+
+                <input type="email" name="email" placeholder="Your email" ngModel>
+                <br />
+
+                <textarea name="message" placeholder="Your message" ngModel></textarea>
+                <br />
+                <button type="submit" class="primary" value="Send">Submit</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>

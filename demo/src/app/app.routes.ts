@@ -6,13 +6,15 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 //import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
-
+import { DatabindingComponent } from './databinding/databinding.component';
 export const routes: Routes = [
-    { path: '',   redirectTo: '/product', pathMatch: 'full' },
+   
+    { path: '',   redirectTo: '/data', pathMatch: 'full' },
+    { path:'data', component: DatabindingComponent},
     { path:'product', component:ProductComponent},
     { path: 'templateform', component: TemplateFormComponent },
-    { path:'reactiveform', component:ReactiveFormsComponent},
-    { path:'emplist', component:EmployeeListComponent},
+  //  { path:'reactiveform', loadComponent:()=>import('./reactive-forms/reactive-forms.component').then((c)=>c.ReactiveFormsComponent)},
+    { path:'emplist', loadComponent:()=>import('./employee-list/employee-list.component').then((c)=>c.EmployeeListComponent)},
     { path:'empDetails/:id', component:EmployeeDetailsComponent},
     { path: '**', component:PagenotfoundComponent}
     // { path: 'emp', component: EmployeeDetailsComponent },

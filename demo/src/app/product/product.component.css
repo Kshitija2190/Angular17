@@ -1,8 +1,21 @@
 .pink {
-    color:pink;
+    color:brown;
     font-size:14px;
 }
 .green {
     color:green;
     font-size:14px;
+}
+.paragraph {
+    font-size: 20px;
+    font-weight: bold;
+    color:black;
+}
+.showText {
+    color:green;
+    font-size: 14px;
+}
+.row {
+    margin:20px;
+    padding: 30px;;
 }

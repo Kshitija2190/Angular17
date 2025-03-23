@@ -12,6 +12,7 @@ export class TemplateFormComponent {
   favColor: string ='Blue';
 
   onSubmit(form: NgForm) {
+    confirm("Name : " +form.value.fullName + "\n" + "Email : " +form.value.email + "\n" + "Message : " +form.value.message);
     console.log('Your form data : ', form.value);
 }
 

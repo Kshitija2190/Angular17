@@ -1,125 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Structural Directive NGIF</title>
-</head>
-<body class="container row">
-    <div class="col-md-12">
-        <p *ngIf="displayData else noData">
-            <span [ngClass]="displayData ? 'pink':'green'">Ngif works as expected since its true</span> 
-         </p>
-         <ng-template #noData>
-             {{noDataVal}}
-         </ng-template>
-         <button (click)="show = !show">{{show ? 'Show' : 'Hide'}}</button>
-         <div *ngIf="show; else hide">
-            <span [ngStyle]="{'color':'green', 'font-weight':900}"> You choose the option show </span>
-         </div>
-         <div>
-     
-         </div>
-         <ng-template #hide>
-             You choose the option hide 
-         </ng-template>
-         <!-- <div [value]="property"></div> -->
-         <div>
-             <p>Product List</p>
-             <ul *ngFor="let x of productList">
-                 <li>{{x.code}}</li>
-                 <li>{{x.name}}</li>
-             </ul>
-         </div>
-         <div>
-             <p>Switch in Angular</p>
-             <div [ngSwitch]="selectedVal">
-                 <p *ngSwitchCase="'one'">You selected One</p>
-                 <p *ngSwitchCase="'two'">You selected Two</p>
-                 <p *ngSwitchCase="'three'">You selected Three</p>
-                 <p *ngSwitchDefault>You have selected default</p>
-             </div>
-         </div>
-         <img [src]="'assets/img/img1.jpeg'" alt="image">
-         <input type="text" [(ngModel)]="texts" name="texts"/>
-     
-         <div>
-             {{texts}}
-         </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+
+<body class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <p *ngIf="displayData else noData">
+        <span [ngClass]="displayData ? 'pink':'green'"><p class="paragraph">Ngif works as expected since its true</p></span>
+      </p>
+      <ng-template #noData>
+        {{noDataVal}}
+      </ng-template>
+      <button (click)="show = !show">{{show ? 'Show' : 'Hide'}}</button>
+      <div *ngIf="show; else hide">
+        <span [ngStyle]="{'color':'green', 'font-weight':900}"> You choose the option show </span>
+      </div>
+      <ng-template #hide>
+       <span [ngStyle]="{'color':'green', 'font-weight':900}"> You choose the option hide</span>
+      </ng-template>
     </div>
-   <div class="row">
-    <div class="col-md-6">Hello</div>
-    <div class="col-md-6">World</div>
-   </div>
-   <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        Column
+    <div class="col-lg-6">
+      <div>
+        <p class="paragraph">Product List</p>
+        <ul *ngFor="let x of productList">
+          <li>{{x.code}}  {{x.name}}</li>
+        </ul>
       </div>
-      <div class="col">
-        Column
+    </div>
+
+    
+
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <p class="paragraph">Switch in Angular</p>
+      <div [ngSwitch]="selectedVal">
+        <p *ngSwitchCase="'one'">You selected One</p>
+        <p *ngSwitchCase="'two'">You selected Two</p>
+        <p *ngSwitchCase="'three'">You selected Three</p>
+        <p *ngSwitchDefault>You have selected default</p>
       </div>
-      <div class="col">
-        Column
+    </div>
+    <div class="col-lg-4">
+      <p class="paragraph">Inbuilt Pipes</p>
+      {{productName | lowercase}} <br>
+      {{productName | uppercase}} <br>
+      {{productName | titlecase}} <br>
+      {{productName | slice :3}} <br>
+      {{productName | slice :3 :5}} <br>
+      <!-- {{ productList | json}}
+      {{ 5.678 | number :'1.2-3'}} <br> -->
+      <!-- <div>
+        {{ 5.678 | number :'3.4-5'}}
       </div>
+      <div>
+        {{ 5.678 | number :'3.1-2'}}
+      </div>
+      <div>
+        {{0.25 | percent }}
+      </div>
+      <div>
+        {{0.25 | currency }}
+      </div>
+      <div>
+        {{date}}
+      </div>
+      <div>
+        {{date | date:'short'}}
+      </div>
+      <div>
+        {{date | date:'shortDate'}}
+      </div>
+      <div>
+        {{date | date:'shortTime'}}
+      </div>
+      <div>
+        {{date | date:'medium'}}
+      </div>
+      <div>
+        {{date | date:'mediumDate'}}
+      </div>
+      <div>
+        {{date | date:'mediumTime'}}
+      </div>
+      <div>
+        {{date | date:'long'}}
+      </div>
+      <div>
+        {{date | date:'longDate'}}
+      </div>
+      <div>
+        {{date | date:'longTime'}}
+      </div> -->
     </div>
   </div>
-  <div>
+  <!-- <div>
     <p><strong>Component Interaction Parent To child</strong></p>
     <span>{{name}}</span>
     <button (click)="fireEvent()">Send</button>
-  </div>
-  <div>
-    <p><strong>Inbuilt Pipes</strong></p>
-    {{productName | lowercase}} <br>
-    {{productName | uppercase}}  <br>
-    {{productName | titlecase}} <br>
-    {{productName | slice :3}} <br>
-    {{productName | slice :3 :5}} <br>
-    {{ productList | json}}
-    {{ 5.678  | number :'1.2-3'}} <br>
-    <div>
-      {{ 5.678  | number :'3.4-5'}}
-    </div>
-    <div>
-      {{ 5.678  | number :'3.1-2'}}
-    </div>
-    <div>
-      {{0.25  | percent }}
-    </div>
-    <div>
-      {{0.25  | currency }}
-    </div>
-    <div>
-     {{date}}
-    </div>
-    <div>
-      {{date | date:'short'}}
-     </div>
-     <div>
-      {{date | date:'shortDate'}}
-     </div>
-     <div>
-      {{date | date:'shortTime'}}
-     </div>
-     <div>
-      {{date | date:'medium'}}
-     </div>
-     <div>
-      {{date | date:'mediumDate'}}
-     </div>
-     <div>
-      {{date | date:'mediumTime'}}
-     </div>
-     <div>
-      {{date | date:'long'}}
-     </div>
-     <div>
-      {{date | date:'longDate'}}
-     </div>
-     <div>
-      {{date | date:'longTime'}}
-     </div>
-  </div>
+  </div> -->
+ 
 </body>
+
 </html>

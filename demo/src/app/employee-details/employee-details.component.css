@@ -1,0 +1,12 @@
+.text-center{
+    text-align: center;
+    padding: 20px;
+}
+.paragraph{
+    color:lightcoral;
+    font-size: 18px;
+    font-weight:900;
+}
+p {
+    font-size: 20px;
+}

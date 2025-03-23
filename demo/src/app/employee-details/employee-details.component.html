@@ -1,9 +1,9 @@
-<div>
-    <p>Employee Details</p>
-    You selected employee having id : {{selectedIndex}}
+<div class="text-center">
+    <p><strong>Employee Details</strong></p>
+    <div class="paragraph"> You selected employee having id : {{selectedIndex}}</div>
     <ul *ngFor="let x of selectedEmp">
-        <li>{{x.id}}  {{x.name}} {{x.age}}  </li>
-       
+        <li><strong>{{x.id}} {{x.name}} {{x.age}} </strong></li>
+
     </ul>
     {{errorMsg}}
 </div>

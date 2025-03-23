@@ -1,0 +1,17 @@
+.cred {
+    color: red;
+}
+p {
+    color:navy;
+    font-size: medium;
+    font-weight:bold;
+
+}
+.title {
+    color:blueviolet;
+    font-size:larger;
+}
+.row {
+    padding:20px;
+    margin:20px;
+}
